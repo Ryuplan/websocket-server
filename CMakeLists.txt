@@ -1,0 +1,7 @@
+#cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.30 FATAL_ERROR)
+project(websocket_server LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 23)
+add_subdirectory(external)
+add_executable(Main main.cpp)
+target_link_libraries(Main uWebSockets)
