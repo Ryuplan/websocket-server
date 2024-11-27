@@ -32,6 +32,7 @@ struct PerSocketData {
             /* This is the opposite of what you probably want; compress if message is LARGER than 16 kb
              * the reason we do the opposite here; compress if SMALLER than 16 kb is to allow for
              * benchmarking of large message sending without compression */
+            std::cout << "Got the message as" << message << std::endl;
             ws->send(message, opCode, message.length() < 16 * 1024);
         },
         // .dropped = [](auto *a, std::string_view /*message*/, uWS::OpCode /*opCode*/) {
